@@ -34,12 +34,12 @@ class LoginController extends Controller
         return back()->withInput($request->only('email', 'remember'));
     }
 
-    public function showWriterLoginForm()
+    public function showUserLoginForm()
     {
         return view('auth.login', ['url' => 'user']);
     }
 
-    public function writerLogin(Request $request)
+    public function userLogin(Request $request)
     {
         $this->validate($request, [
             'email'   => 'required|email',

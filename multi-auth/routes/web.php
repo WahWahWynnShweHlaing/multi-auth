@@ -19,14 +19,14 @@ Route::view('/', 'welcome');
 Auth::routes();
 
 Route::get('/login/admin', [LoginController::class , 'showAdminLoginForm']);
-Route::get('/login/user', [LoginController::class , 'showWriterLoginForm']);
+Route::get('/login/user', [LoginController::class , 'showUserLoginForm']);
 Route::get('/register/admin', [RegisterController::class , 'showAdminRegisterForm']);
-Route::get('/register/user', [RegisterController::class , 'showWriterRegisterForm']);
+Route::get('/register/user', [RegisterController::class , 'showUserRegisterForm']);
 
 Route::post('/login/admin', [LoginController::class , 'adminLogin']);
-Route::post('/login/user', [LoginController::class , 'writerLogin']);
+Route::post('/login/user', [LoginController::class , 'userLogin']);
 Route::post('/register/admin', [RegisterController::class , 'createAdmin']);
-Route::post('/register/user', [RegisterController::class , 'createWriter']);
+Route::post('/register/user', [RegisterController::class , 'createUser']);
 
 Route::view('/home', 'layouts.home')->middleware('auth');
 Route::view('/admin', 'layouts.admin');

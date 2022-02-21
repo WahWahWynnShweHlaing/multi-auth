@@ -21,7 +21,7 @@ class RegisterController extends Controller
         return view('auth.register', ['url' => 'admin']);
     }
 
-    public function showWriterRegisterForm()
+    public function showUserRegisterForm()
     {
         return view('auth.register', ['url' => 'user']);
     }
@@ -36,7 +36,7 @@ class RegisterController extends Controller
         return redirect()->intended('longin/admin');
     }
 
-    protected function createWriter(Request $request)
+    protected function createUser(Request $request)
     {
         User::create([
             'name' => $request['name'],
